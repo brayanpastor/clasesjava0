@@ -1,12 +1,6 @@
 package primeraclase;
-
 import java.util.Scanner;
 
-
-/**
- *
- * @author Brayan
- */
 public class funciontext {
 
     /**
