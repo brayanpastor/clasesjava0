@@ -32,11 +32,14 @@ public class Trabajador {
 
     public static void main(String[] args) {
         Trabajador t1 = new Trabajador(1, "luis", 'm', "01/12/1990");
+    
         System.out.println(t1.getcodigo());
+        
         // t1.setcodigo(5);
-        t1.codigo = 5;
+        //t1.codigo = 5;
         System.out.println(t1.getcodigo());
         System.out.println(t1.edad());
+       
     }
 
 }
