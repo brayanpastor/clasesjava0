@@ -8,7 +8,7 @@ public class Contacto {
     {
     this.nombre=nom;
     }
-    //========================0
+    //========================
 
     public String getnombre() {
         return nombre;
