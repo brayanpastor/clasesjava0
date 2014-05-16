@@ -19,8 +19,7 @@ public class menu {
         String bus = ce.buscarnumero("luis");
         System.out.println(ce.total());
         System.out.println(bus);
-           
-       
+   
     }
 
 }
