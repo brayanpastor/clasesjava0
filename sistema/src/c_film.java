@@ -5,7 +5,7 @@ import java.sql.SQLException;
 public class c_film {
 
     //atributos 
-    private int[] codigo;
+    private int[ ] codigo;
     private String[] film;
     private String[] descripcion;
     private String[] anioestreno;
@@ -21,14 +21,20 @@ public class c_film {
     private int ta = 0, ini = 0;
 
     public void llenar(int tip, String campo, String valor) throws SQLException {
-         String consulta;
-         if(tip==1){
-             consulta="select * from film";
-         }else 
+         String consulta="";
+         
+         switch (tip)
          {
-             consulta="select * from film where "+campo+" like '"+valor+ "%'";             
+             case 1 : consulta="select * from film";
+                 break;
+             case 2 :  consulta="select * from film where "+campo+" like '"+valor+ "%'"; 
+                 break;
+                 case 3 :  consulta="select * from v_filmxcategoria where "+campo+" = '"+valor+ "'"; 
+                 break;
+                 
          }
-        rs = db.consulta_sql(consulta);
+         System.out.println(consulta);    
+         rs = db.consulta_sql(consulta);
         ta = db.ultimo();
         if (ta > 0) {
             codigo = new int[ta];

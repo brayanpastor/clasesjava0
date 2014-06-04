@@ -11,7 +11,7 @@ public class c_categoria {
     private int ta = 0, ini = 0;
 
     public void llenar() throws SQLException {
-        r = db.consulta_sql("select * from actor");
+        r = db.consulta_sql("select * from category");
         r.last();
         ta = r.getRow();
         codigo = new int[ta];
@@ -20,7 +20,7 @@ public class c_categoria {
         int i = 0;
         do {
             codigo[i] = r.getInt(1);
-            nomcategoria[i] = r.getString(3);
+            nomcategoria[i] = r.getString(2);
             i++;
 
         } while (r.next());
@@ -50,12 +50,12 @@ public class c_categoria {
 
     public int siguiente() {
         System.out.println(ini);
-        if (ini <ta-1) {
-           
+        if (ini < ta - 1) {
+
             ini++;
 
         } else {
-           ini =ta-1;
+            ini = ta - 1;
 
         }
         return ini;
@@ -68,6 +68,10 @@ public class c_categoria {
             ini = primero();
         }
         return ini;
+    }
+
+    public int totalregistro() {
+        return ta;
     }
 
 }
